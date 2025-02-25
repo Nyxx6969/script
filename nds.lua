@@ -55,7 +55,7 @@ do
             end)
         else
             event:Disconnect()
-        end, Options.MyToggle.Value
+        end
     end)
 
     Options.MyToggle:SetValue(false)
