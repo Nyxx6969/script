@@ -45,22 +45,6 @@ do
             game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-247,180,306))
         end
     })
-
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
-
-    Toggle:OnChanged(function(bool)
-        if bool then
-            event = runService.RenderStepped:Connect(function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264, 195, 288)
-            end)
-        else
-            event:Disconnect()
-        end
-    end)
-
-    Options.MyToggle:SetValue(false)
-
-
     
     local Slider = Tabs.Main:AddSlider("Slider", {
         Title = "Slider",
