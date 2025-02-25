@@ -39,10 +39,14 @@ do
     })
 
     Tabs.Main:AddButton({
-        Title = "Teleport Lobby",
-        Description = "Teleports you to the Lobby",
-        Callback = function()
-            game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-247,180,306))
+        Title = "Launch Rocket",
+        Description = "Launches rocket instantly",
+        Callback = pcall(function()
+                fireclickdetector(game:GetService("Workspace").Structure["Launch Land"]["SPACESHIP!!"].Shuttle.IgnitionButton.ClickDetector)
+		        fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleLower.ReleaseButtonLower.ClickDetector)
+		        fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleUpper.ReleaseButtonUpper.ClickDetector)
+		        fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].LoadingTower.Console.ReleaseEntryBridge.ClickDetector)
+            end)
         end
     })
     
