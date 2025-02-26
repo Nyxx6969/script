@@ -22,6 +22,11 @@ local Tabs = {
 local Options = Fluent.Options
 
 do
+    Tabs.Main:AddParagraph({
+        Title = "Current Disaster",
+        Content = game.Players.LocalPlayer.Character.SurvivalTag.Value
+    })
+
     Tabs.Main:AddButton({
         Title = "Teleport Island",
         Description = "Teleports you to the island",
@@ -46,18 +51,6 @@ do
 		    fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleLower.ReleaseButtonLower.ClickDetector)
 		    fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleUpper.ReleaseButtonUpper.ClickDetector)
 		    fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].LoadingTower.Console.ReleaseEntryBridge.ClickDetector)
-        end
-    })
-
-    Tabs.Main:AddButton({
-        Title = "Show Disaster",
-        Description = "Show the current disaster with notification",
-        Callback = function()
-            Fluent:Notify({
-                Title = "Current Disaster",
-                Content = game.Players.LocalPlayer.Character.SurvivalTag.Value,
-                Duration = 10 -- Set to nil to make the notification not disappear
-            })
         end
     })
     
