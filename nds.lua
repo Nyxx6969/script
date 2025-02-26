@@ -55,7 +55,7 @@ do
         Callback = function()
             Fluent:Notify({
                 Title = "Current Disaster",
-                Content = game:GetService("ReplicatedStorage").FireServer(game.Players.LocalPlayer.Character.SurvivalTag.Value, "All"),
+                Content = game:GetService("ReplicatedStorage").game(Players.LocalPlayer.Character.SurvivalTag.Value, "All")
                 Duration = 10 -- Set to nil to make the notification not disappear
             })
         end
