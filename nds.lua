@@ -48,6 +48,19 @@ do
 		    fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].LoadingTower.Console.ReleaseEntryBridge.ClickDetector)
         end
     })
+
+    Tabs.Main:AddButton({
+        Title = "Show Disaster",
+        Description = "Show the current disaster with notification",
+        Callback = function()
+            Fluent:Notify({
+                Title = "Notification",
+                Content = "This is a notification",
+                SubContent = "SubContent", -- Optional
+                Duration = 5 -- Set to nil to make the notification not disappear
+            })
+        end
+    })
     
     local Slider = Tabs.Main:AddSlider("Slider", {
         Title = "Slider",
