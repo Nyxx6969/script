@@ -40,7 +40,7 @@ do
 
     Tabs.Main:AddButton({
         Title = "Launch Rocket",
-        Description = "Launches rocket instantly",
+        Description = "Launches rocket instantly only work in map 'Launch Land'",
         Callback = function(pcall)
             fireclickdetector(game:GetService("Workspace").Structure["Launch Land"]["SPACESHIP!!"].Shuttle.IgnitionButton.ClickDetector)
 		    fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleLower.ReleaseButtonLower.ClickDetector)
@@ -54,10 +54,9 @@ do
         Description = "Show the current disaster with notification",
         Callback = function()
             Fluent:Notify({
-                Title = "Notification",
-                Content = "This is a notification",
-                SubContent = "SubContent", -- Optional
-                Duration = 5 -- Set to nil to make the notification not disappear
+                Title = "Current Disaster",
+                Content = game:GetService("ReplicatedStorage").FireServer(game.Players.LocalPlayer.Character.SurvivalTag.Value, "All"),
+                Duration = 10 -- Set to nil to make the notification not disappear
             })
         end
     })
